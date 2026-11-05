@@ -107,4 +107,12 @@ Claude بهالمجلد ممنوع يعدّل كود البرنامج — بيك
 - **بيشتغل بدون نت؟** الرسم آه (الخطوط والأيقونات محلية). الكتابة بتحتاج نت لأنها من Claude.
 - **أكثر من حساب/هوية؟** النسخة الحالية لهوية وحدة.
 
-مجاني ومفتوح المصدر — رخصة [MIT](LICENSE) · الخطوط والأيقونات: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
+## صاحب المشروع
+فكرة وتصميم وبرمجة **السيد الأخرسي** (Alsaeyd Al-Akhras) — مطوّر Full-stack (Laravel + Vue) من غزة.
+- انستغرام: [@alsaeyd.tech](https://instagram.com/alsaeyd.tech)
+- GitHub: [alsaeyd-alakhras](https://github.com/alsaeyd-alakhras)
+- الموقع: [alsaeyd-alakhras.vercel.app](https://alsaeyd-alakhras.vercel.app)
+
+لو استخدمت سَحبة أو بنيت عليها، اذكر المصدر وحط رابط المشروع — وهاد شرط الرخصة كمان (إشعار الحقوق لازم يضل موجود).
+
+© 2026 السيد الأخرسي · مجاني ومفتوح المصدر — رخصة [MIT](LICENSE) · الخطوط والأيقونات: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)

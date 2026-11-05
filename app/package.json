@@ -1,5 +1,10 @@
 {
   "name": "sahba-app",
+  "version": "1.0.0",
+  "description": "Sahba — Arabic Instagram carousel factory",
+  "author": "Alsaeyd Al-Akhras <https://github.com/alsaeyd-alakhras>",
+  "license": "MIT",
+  "homepage": "https://github.com/alsaeyd-alakhras/sahba",
   "private": true,
   "type": "module",
   "scripts": {

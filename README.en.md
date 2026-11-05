@@ -105,4 +105,12 @@ Download the new version and replace **every file and folder except `workspace/`
 - **Does it work offline?** Rendering yes (fonts and icons are local). Writing needs internet because it uses Claude.
 - **Several accounts/identities?** This version supports one identity.
 
-Free and open source — [MIT](LICENSE) · Fonts and icons: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
+## Author
+Idea, design and code by **Alsaeyd Al-Akhras** (السيد الأخرسي) — full-stack developer (Laravel + Vue) from Gaza.
+- Instagram: [@alsaeyd.tech](https://instagram.com/alsaeyd.tech)
+- GitHub: [alsaeyd-alakhras](https://github.com/alsaeyd-alakhras)
+- Website: [alsaeyd-alakhras.vercel.app](https://alsaeyd-alakhras.vercel.app)
+
+If you use or build on Sahba, please credit it and link back — the license also requires keeping the copyright notice.
+
+© 2026 Alsaeyd Al-Akhras · Free and open source — [MIT](LICENSE) · Fonts and icons: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)

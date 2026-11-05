@@ -96,6 +96,8 @@ code, pre { font-family: var(--font-mono); }
 .nav-link .counter { min-inline-size: var(--chip-h); padding: 0 var(--s-2); border-radius: var(--r-pill); background: var(--c-surface-3); color: var(--c-ink-2); font-weight: var(--fw-bold); text-align: center; }
 .nav-link[aria-current="page"] .counter { background: var(--c-surface); }
 
+.credit { display: block; padding-inline: var(--s-3); font-size: var(--fs-xs); color: var(--c-ink-3); text-decoration: none; }
+.credit:hover { color: var(--c-accent-text); }
 .nav-foot { margin-block-start: auto; display: flex; flex-direction: column; gap: var(--s-2); padding-block-start: var(--s-3); border-block-start: var(--border-strong) dashed var(--c-line); }
 .nav-tools { display: flex; gap: var(--s-2); }
 .status-line {

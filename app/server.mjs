@@ -1,3 +1,4 @@
+// Sahba — © 2026 Alsaeyd Al-Akhras (السيد الأخرسي) · MIT · https://github.com/alsaeyd-alakhras/sahba
 // Sahba — local server. Zero dependencies, 127.0.0.1 only. API routes: server/routes/*.mjs (auto-loaded).
 // Static: app/public/ · /files/* (workspace) · /engine/* + /templates/* (asset files only, no code).
 import http from 'node:http';

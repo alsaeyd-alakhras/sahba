@@ -89,8 +89,12 @@ function renderNav() {
       h('div', { class: 'nav-tools' },
         button({ label: t(`lang.switchTo.${otherLang}`), iconName: 'globe', size: 'sm', variant: 'ghost', testid: 'lang-toggle', onClick: () => changeLang(otherLang) }),
         button({ iconName: themeIcon, size: 'sm', variant: 'ghost', ariaLabel: t('theme.toggle', { mode: t(`theme.${nextTheme}`) }), testid: 'theme-toggle',
-          onClick: () => { applyTheme(nextTheme); renderNav(); } }))));
+          onClick: () => { applyTheme(nextTheme); renderNav(); } })),
+      h('a', { class: 'credit', href: AUTHOR_URL, target: '_blank', rel: 'noopener', testid: 'author-credit' }, t('app.madeBy'))));
 }
+
+// product credit (MIT, © the author) — not user data
+const AUTHOR_URL = 'https://github.com/alsaeyd-alakhras/sahba';
 
 /* ---------------- routing ---------------- */
 const loaders = {
