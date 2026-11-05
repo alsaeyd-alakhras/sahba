@@ -1,0 +1,42 @@
+{
+ "slug": "bad text!",
+ "slides": [
+  {
+   "kind": "cover",
+   "headline": "عنوان طويل جداً فيه كلمات أكثر من ستة بكثير",
+   "icons": [
+    "Rocket",
+    "Clock",
+    "Zap"
+   ]
+  },
+  {
+   "kind": "stat",
+   "kicker": "الأرقام 🔥",
+   "value": "12",
+   "title": "رقم 🚀"
+  },
+  {
+   "kind": "bars",
+   "title": "ناقص",
+   "items": [
+    {
+     "label": "أ",
+     "value": "x"
+    }
+   ]
+  },
+  {
+   "kind": "teleport",
+   "title": "نوع مش موجود"
+  },
+  {
+   "kind": "compare",
+   "title": "بلا أطراف",
+   "subtitle": "حقل غريب"
+  },
+  {
+   "kind": "cta"
+  }
+ ]
+}

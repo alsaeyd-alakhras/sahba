@@ -1,0 +1,49 @@
+{
+ "slug": "bad_icons",
+ "caption": "كابشن\n\n#a #b #c #d #e",
+ "slides": [
+  {
+   "kind": "cover",
+   "headline": "أيقونات غلط",
+   "icons": [
+    "Rocket",
+    "NotAnIcon",
+    "clock"
+   ]
+  },
+  {
+   "kind": "point",
+   "icon": "Rokcet",
+   "title": "أيقونة غلط",
+   "art": "window",
+   "icons": [
+    "Zap",
+    "Clock",
+    "Kode"
+   ]
+  },
+  {
+   "kind": "list",
+   "title": "بلا رسمة",
+   "items": [
+    "واحد",
+    "اثنين",
+    "ثلاثة"
+   ]
+  },
+  {
+   "kind": "quote",
+   "quote": "فن غلط",
+   "art": "spiral",
+   "icons": [
+    "Zap",
+    "Clock",
+    "Code"
+   ]
+  },
+  {
+   "kind": "cta",
+   "headline": "تابع"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "slug": "bad_repeat",
+ "caption": "كابشن\n\n#a #b #c #d #e",
+ "slides": [
+  {
+   "kind": "cover",
+   "headline": "تكرار",
+   "icons": [
+    "Rocket",
+    "Clock",
+    "Zap"
+   ],
+   "art": "stack"
+  },
+  {
+   "kind": "point",
+   "icon": "Rocket",
+   "title": "أول نقطة",
+   "art": "stack",
+   "icons": [
+    "Zap",
+    "Clock",
+    "Code"
+   ]
+  },
+  {
+   "kind": "point",
+   "icon": "Rocket",
+   "title": "نقطة ورا نقطة"
+  },
+  {
+   "kind": "cta",
+   "headline": "تابع"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mono",
+  "name": { "ar": "مونو", "en": "Mono" },
+  "desc": {
+    "ar": "أبيض وأسود حاد بلون أكسنت واحد، خط عريض جداً، خطوط سميكة وزوايا حادة — بلا نقاط ولا توهّج.",
+    "en": "Sharp black and white with a single accent colour, extra-heavy type, thick rules and square corners — no dots, no glows."
+  },
+  "fits": {
+    "ar": "آراء، اقتباسات، قواعد، براند بسيط",
+    "en": "Opinions, quotes, rules, minimal brands"
+  },
+  "tokens": {
+    "bg": "#ffffff",
+    "ink": "#0a0a0a",
+    "soft": "#262626",
+    "mute": "#575757",
+    "accent": "#e10600",
+    "accentDark": "#b00500",
+    "accentLight": "#ff3b30",
+    "card": "#ffffff",
+    "cardBar": "#f1f1f1",
+    "term": "#0a0a0a",
+    "termBar": "#1f1f1f",
+    "font": "cairo"
+  }
+}

@@ -1,0 +1,133 @@
+/* Midnight — near-black + faint blue grid, elevated panels with crisp hairlines, glowing light-blue accent.
+   Accent-coloured text uses --accent-text (the accent lifted to a readable lightness on black) and text on
+   accent surfaces uses --on-accent (dark on light accents, white on dark ones), so any identity.accent works. */
+:root {
+  --accent-text: oklch(from var(--accent) max(l, .8) c h);
+  --on-accent: oklch(from var(--accent) clamp(.14, (.7 - l) * 1000, .99) clamp(0, (l - .7) * 1000, .03) 270);
+  --grad: linear-gradient(120deg, var(--accent), color-mix(in srgb, var(--accent) 80%, #fff));
+  --edge: color-mix(in srgb, var(--accent) 22%, rgba(255, 255, 255, .06));
+  --hair: var(--edge);
+  --track: rgba(255, 255, 255, .07);
+  --glow1: color-mix(in srgb, var(--accent) 17%, transparent);
+  --glow2: color-mix(in srgb, #8b5cf6 13%, transparent);
+  --shadow: 0 22px 50px rgba(0, 0, 0, .6);
+  --shadow-accent: color-mix(in srgb, var(--accent) 30%, transparent);
+  --lit: linear-gradient(155deg, color-mix(in srgb, var(--accent) 30%, #0e1226), color-mix(in srgb, var(--accent) 9%, #070916));
+  --tile-radius: .24;
+  --w-title: 800;
+  --w-body: 500;
+}
+
+/* ── background: blueprint grid fading to the edges + a framed "screen" ── */
+.bg-dots { background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 7%, transparent) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 7%, transparent) 1.5px, transparent 1.5px);
+  background-size: 72px 72px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, #000 40%, transparent 100%); }
+.slide::after { content: ""; position: absolute; inset: 24px 24px 30px; border: 1.5px solid rgba(255, 255, 255, .07); border-radius: 40px; pointer-events: none; z-index: 2; }
+.bg-glow.g1 { width: 760px; height: 760px; }
+
+/* ── chrome ── */
+.spark path, .bookmark path { fill: var(--accent-text); }
+.sparkle path { fill: var(--accent-light); }
+.corner-spark { filter: drop-shadow(0 0 12px color-mix(in srgb, var(--accent) 60%, transparent)); }
+.badge span { display: inline-flex; align-items: center; gap: 14px; border-radius: 14px; padding: 10px 26px; color: var(--accent-text);
+  background: color-mix(in srgb, var(--accent) 9%, #0a0d1e); border: 1.5px solid color-mix(in srgb, var(--accent) 38%, transparent); }
+.badge span::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-text); box-shadow: 0 0 12px var(--accent); flex-shrink: 0; }
+.progress { background: rgba(255, 255, 255, .05); }
+.progress-fill { box-shadow: 0 0 18px var(--accent); }
+.pn-n { font-family: var(--mono); font-size: 36px; color: var(--accent-text); }
+.pn-t { font-family: var(--mono); font-size: 26px; color: rgba(255, 255, 255, .34); }
+.handle { color: rgba(255, 255, 255, .42); }
+
+/* ── markup ── */
+.rb, .rl { color: var(--accent-text); }
+.rb { text-shadow: 0 0 34px color-mix(in srgb, var(--accent) 45%, transparent); }
+.rm { background: linear-gradient(transparent 56%, color-mix(in srgb, var(--accent) 34%, transparent) 56%, color-mix(in srgb, var(--accent) 34%, transparent) 94%, transparent 94%); }
+.rc-svg path { stroke: var(--accent-text); stroke-width: 5; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 70%, transparent)); }
+
+/* ── primitives: tiles are lit glass, cards are raised panels ── */
+.tile { color: var(--accent-text); background: var(--lit); border: 2px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  box-shadow: 0 0 calc(var(--s) * .45) color-mix(in srgb, var(--accent) 28%, transparent), inset 0 1.5px 0 rgba(255, 255, 255, .14); }
+.tile.light { background: var(--card); color: var(--accent-text); border: 2px solid var(--edge); box-shadow: 0 18px 40px rgba(0, 0, 0, .55), inset 0 1.5px 0 rgba(255, 255, 255, .06); }
+.tile.bare { background: transparent; border: 0; box-shadow: none; color: var(--accent-text); }
+.chip, .win, .cmp-card, .as-card, .pill, .ao-label span { box-shadow: 0 22px 50px rgba(0, 0, 0, .6), inset 0 1.5px 0 rgba(255, 255, 255, .06); border: 2px solid var(--edge); }
+.win-bar { border-bottom: 2px solid rgba(255, 255, 255, .05); }
+.skel-row.hot { box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 55%, transparent); }
+.hand-arrow path, .swipe-arrow path { stroke: var(--accent-text); }
+.photo { border-color: var(--accent-text); box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 12%, transparent), 0 0 60px color-mix(in srgb, var(--accent) 35%, transparent); }
+.photo-empty { background: color-mix(in srgb, var(--accent) 16%, var(--card)); }
+.photo-empty svg * { fill: color-mix(in srgb, var(--accent) 50%, var(--card)); }
+
+/* art */
+.ao-dash { stroke: var(--accent-text); stroke-opacity: .5; }
+.ao-fill { fill: color-mix(in srgb, var(--accent) 9%, transparent); stroke: color-mix(in srgb, var(--accent) 22%, transparent); stroke-width: 2; }
+.ao-label span { color: var(--accent-text); }
+.as-bar { background: rgba(255, 255, 255, .1); }
+.as-card.hot { background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 34%, var(--card)), var(--card)); border: 2px solid var(--accent-text);
+  box-shadow: 0 0 50px color-mix(in srgb, var(--accent) 35%, transparent), 0 26px 50px rgba(0, 0, 0, .6); }
+.as-card.hot .as-t { color: var(--ink); }
+.as-card.hot .as-bar { background: var(--accent-text); box-shadow: 0 0 12px var(--accent); }
+
+/* ── shared ── */
+.kicker, .point-head, .swipe-t, .cover-handle, .cta-handle, .src-t, .rule-k, .li-dot { color: var(--accent-text); }
+.accent-line, .src-line, .steps-line { box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 70%, transparent); }
+
+/* point */
+.ghost-num { color: transparent; -webkit-text-stroke: 3px color-mix(in srgb, var(--accent) 24%, transparent); font-family: var(--mono); font-weight: 700; }
+.num-tile { font-family: var(--mono); font-weight: 700; color: var(--accent-text); background: var(--lit); line-height: 114px;
+  border: 2px solid color-mix(in srgb, var(--accent) 60%, transparent); box-shadow: 0 0 50px color-mix(in srgb, var(--accent) 28%, transparent); }
+
+/* quote */
+.quote-mark { color: color-mix(in srgb, var(--accent) 16%, transparent); }
+
+/* stat */
+.stat-val { color: var(--accent-text); text-shadow: 0 0 80px color-mix(in srgb, var(--accent) 45%, transparent); }
+.stat-unit { color: color-mix(in srgb, var(--accent-text) 70%, transparent); }
+.meter { background: rgba(255, 255, 255, .06); }
+.meter-fill { box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 70%, transparent); }
+
+/* bars */
+.bar-track { background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .06); }
+.bar-fill { background: rgba(255, 255, 255, .2); }
+.bar.hot .bar-head { color: var(--accent-text); }
+.bar.hot .bar-fill { box-shadow: 0 0 26px color-mix(in srgb, var(--accent) 70%, transparent); }
+.bar-v { font-family: var(--mono); font-weight: 700; }
+
+/* compare: the winner is a lit panel, not a filled block */
+.cmp-card { border-radius: 30px; }
+.cmp-card.hot { background: linear-gradient(165deg, color-mix(in srgb, var(--accent) 22%, var(--card)), var(--card) 75%); color: var(--ink); border: 2px solid var(--accent-text);
+  box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 28%, transparent), 0 24px 50px rgba(0, 0, 0, .6); }
+.cmp-card.hot .cmp-h, .cmp-card.hot .cmp-mark { color: var(--accent-text); }
+.vs { background: var(--bg); color: var(--accent-text); border: 2px solid var(--accent-text); font-family: var(--mono); font-weight: 700; line-height: 92px;
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 45%, transparent); }
+
+/* sites */
+.win.brand { border: 2px solid var(--accent-text); box-shadow: 0 0 70px color-mix(in srgb, var(--accent) 30%, transparent), 0 30px 70px rgba(0, 0, 0, .6); }
+.site-nav i, .site-hero, .site-ph { background: rgba(255, 255, 255, .08); }
+.site-row.b { color: var(--accent-text); }
+.site-swatches i { box-shadow: 0 4px 12px rgba(0, 0, 0, .6); border-color: rgba(255, 255, 255, .18); }
+.sw3 { background: #1b2140; }
+.site-tag span { background: rgba(255, 255, 255, .07); box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .1); border-radius: 14px; }
+.site-tag.hot span { box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 50%, transparent); }
+
+/* pick */
+.pill { border-radius: 16px; opacity: .55; text-decoration-color: rgba(255, 255, 255, .5); }
+.pick-hot { border-radius: 30px; box-shadow: 0 0 80px color-mix(in srgb, var(--accent) 50%, transparent), inset 0 2px 0 rgba(255, 255, 255, .3); }
+
+/* rule */
+.flow-step.hot .flow-t { color: var(--accent-text); }
+.flow-arrow path { stroke: var(--accent-text); }
+
+/* steps: glowing nodes on a circuit line */
+.step-dot { background: var(--card); border: 3px solid var(--accent-text); color: var(--accent-text);
+  box-shadow: 0 0 34px color-mix(in srgb, var(--accent) 40%, transparent), inset 0 0 20px color-mix(in srgb, var(--accent) 18%, transparent); }
+
+/* code */
+.term { box-shadow: inset 0 0 0 2px var(--edge), 0 0 80px color-mix(in srgb, var(--accent) 16%, transparent), 0 30px 60px rgba(0, 0, 0, .7); }
+.term-bar { border-bottom: 1.5px solid rgba(255, 255, 255, .06); }
+.cursor { background: var(--accent-text); }
+
+/* cta */
+.cta-ring { border-color: var(--accent-text); opacity: .3; border-style: dashed; }

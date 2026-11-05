@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit(/workspace/**)",
+      "Write(/workspace/**)",
+      "Bash(node engine/render.mjs:*)"
+    ],
+    "deny": [
+      "Edit(/app/**)",
+      "Write(/app/**)",
+      "Edit(/engine/**)",
+      "Write(/engine/**)",
+      "Edit(/templates/**)",
+      "Write(/templates/**)",
+      "Edit(/.claude/**)",
+      "Write(/.claude/**)",
+      "Edit(/CLAUDE.md)",
+      "Write(/CLAUDE.md)",
+      "Edit(/start.bat)",
+      "Write(/start.bat)",
+      "Edit(/start.command)",
+      "Write(/start.command)"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+ "slug": "test_all-kinds",
+ "category": "اختبار",
+ "caption": "ديك اختبار فيه كل الأنواع.\n\nسطر ثاني.\n\nاحفظ البوست 👇\n\n#اختبار #تجربة #كاروسيل #تصميم #محتوى",
+ "slides": [
+  { "kind": "cover", "headline": "كل {b}الأنواع{/b}<br>بديك {c}واحد{/c}", "sub": "فحص المحرّك من أوله لآخره", "icons": ["Rocket", "Code", "Zap"], "labels": ["أسرع", "أنظف"] },
+  { "kind": "point", "kicker": "نقطة بدون أيقونة", "title": "الرقم بدل<br>الأيقونة", "body": "لما ما في {l}icon{/l} بيطلع مربع الرقم.", "art": "orbit", "icons": ["Brain", "Database", "Terminal", "Github", "Figma"], "labels": ["نظام واحد"], "artAt": { "left": 290, "top": 110, "scale": 0.95 } },
+  { "kind": "list", "icon": "ListChecks", "kicker": "قائمة", "title": "نقاط بسيطة", "items": ["أول نقطة بدون أيقونة", "ثاني نقطة {b}ملوّنة{/b}", "ثالث نقطة {m}بماركر{/m}"] },
+  { "kind": "quote", "quote": "الجملة القوية<br>بتوقف {b}السكرول{/b}", "source": "مصدر الجملة", "art": "stack", "icons": ["Lightbulb", "Target", "Rocket"], "labels": ["فكرة", "هدف", "إطلاق"], "artAt": { "left": 320, "top": 860, "scale": 0.7 } },
+  { "kind": "stat", "icon": "TrendingUp", "kicker": "رقم", "value": 2.5, "prefix": "×", "fill": 80, "title": "أسرع من {b}قبل{/b}" },
+  { "kind": "bars", "icon": "Timer", "kicker": "مقارنة", "title": "ثلاث قيم", "suffix": "%", "items": [ { "label": "قديم", "value": 30 }, { "label": "وسط", "value": 55 }, { "label": "جديد", "value": 90, "hot": true } ] },
+  { "kind": "compare", "title": "قبل وبعد", "right": { "title": "قبل", "items": ["بطيء", "معقّد"] }, "left": { "title": "بعد", "items": ["سريع", "بسيط"] }, "body": "الفرق {m}واضح{/m}" },
+  { "kind": "sites", "title": "موقعين جنب بعض", "plain": ["منيو", "عنوان", "صور"], "plainTag": "عادي", "brand": ["إحساس", "قصة", "تجربة"], "brandIcons": ["Wind", "BookOpen", "Heart"], "heroIcon": "Coffee", "brandTag": "بهوية" },
+  { "kind": "pick", "icon": "Target", "kicker": "اختيار", "title": "واحد بس", "others": ["فخامة", "مرح", "جرأة"], "hot": "بساطة", "hotIcon": "Wind", "body": "الباقي يستنى" },
+  { "kind": "rule", "icon": "BadgeCheck", "quote": "القاعدة {b}بسطر{/b}", "flow": [ { "icon": "Heart", "t": "حس" }, { "icon": "MapPin", "t": "زور" }, { "icon": "Repeat", "t": "ارجع" } ], "source": "ملاحظة تحت القاعدة" },
+  { "kind": "steps", "icon": "Route", "kicker": "خطوات", "title": "أربع خطوات", "items": ["افتح المشروع", { "icon": "Terminal", "t": "شغّل الأمر" }, "راجع النتيجة", "انشر"] },
+  { "kind": "code", "icon": "Terminal", "kicker": "أمر", "title": "سطر واحد", "lines": [ { "t": "$ npm run build", "k": "cmd" }, { "t": "building 42 files...", "k": "out" }, { "t": "✓ done in 1.2s", "k": "ok" }, { "t": "! 1 warning", "k": "err" } ], "body": "وخلصنا" },
+  { "kind": "cta", "headline": "جرّب {c}هلّق{/c}", "prompt": "علّق بكلمة «تم» 👇", "save": "احفظه لبعدين" }
+ ]
+}

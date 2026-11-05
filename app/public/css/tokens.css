@@ -1,0 +1,264 @@
+/* Sahba design tokens — the ONLY place raw values live. See ../DESIGN.md
+   Look: "warm planner" (shared with the author's second-brain dashboard). UI font = Baloo Bhaijaan 2 (css/fonts.css), Cairo fallback below. */
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/engine/fonts/cairo/cairo-arabic-wght-normal.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200E, U+2010-2011, U+204F, U+2E41;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("/engine/fonts/cairo/cairo-latin-wght-normal.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* ---- spacing (4/8/12/16/24/32/48) ---- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  /* ---- type (3 levels: display · title · body) ---- */
+  --font-sans: "Baloo Bhaijaan 2", "Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, "Noto Sans Arabic", sans-serif;
+  --font-display: var(--font-sans);
+  --font-mono: ui-monospace, "Cascadia Code", Consolas, "SF Mono", monospace;
+  --fs-xs: 12.5px;
+  --fs-sm: 13.5px;
+  --fs-md: 14.5px;
+  --fs-base: 15.5px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 30px;
+  --fs-3xl: 34px;
+  --lh-tight: 1.3;
+  --lh-snug: 1.45;
+  --lh: 1.7;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+  --tracking-caps: 0.02em;
+
+  /* ---- radii (10 / 16 / 22 + pill) ---- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* ---- sizes ---- */
+  --border: 1px;
+  --border-strong: 2px;
+  --border-active: 3px;
+  --focus-ring: 3px;
+  --focus-outline: 2px;
+  --press: 1px;
+  --tilt: -6deg;
+  --control-h: 44px;
+  --control-h-sm: 36px;
+  --control-h-lg: 48px;
+  --nav-item-h: 42px;
+  --chip-h: 24px;
+  --icon-sm: 14px;
+  --icon: 18px;
+  --icon-lg: 24px;
+  --icon-xl: 40px;
+  --dot: 8px;
+  --avatar: 40px;
+  --nav-w: 252px;
+  --nav-w-compact: 208px;
+  --content-max: 1180px;
+  --narrow-max: 720px;
+  --modal-w: 520px;
+  --modal-w-lg: 920px;
+  --toast-w: 380px;
+  --thumb-min: 160px;
+  --card-min: 240px;
+  --textarea-h: 96px;
+  --log-h: 220px;
+  --photo-frame: 220px;
+  --swatch: 28px;
+  --progress-h: 8px;
+  --slide-w: 1080px;
+  --slide-h: 1350px;
+  --slide-ratio: 4 / 5;
+  --slide-view-max: 64vh;
+  --opacity-disabled: 0.5;
+  --opacity-muted: 0.7;
+
+  /* ---- motion ---- */
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 400ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --spin: 800ms;
+
+  /* ---- layers ---- */
+  --z-nav: 10;
+  --z-sticky: 20;
+  --z-toast: 100;
+
+  /* ---- color: light (warm planner) ---- */
+  color-scheme: light;
+  --c-bg: #fffaf1;
+  --c-bg-dot: #eadfcc;
+  --c-surface: #ffffff;
+  --c-surface-2: #fbf4e8;
+  --c-surface-3: #f6eedf;
+  --c-nav: #fff1de;
+  --c-ink: #2b2118;
+  --c-ink-2: #56483c;
+  --c-ink-3: #6f6154;
+  --c-line: #eadfcc;
+  --c-line-strong: #dccdb0;
+  --c-accent: #c73e1d;
+  --c-accent-hover: #b3361a;
+  --c-accent-ink: #ffffff;
+  --c-accent-text: #b3361a;
+  --c-accent-press: #8f2b12;
+  --c-accent-soft: rgba(199, 62, 29, 0.09);
+  --c-accent-line: rgba(199, 62, 29, 0.35);
+  --c-ink-bg: #2b2118;
+  --c-on-ink-bg: #ffffff;
+  /* pastel tints — each carries a meaning (see DESIGN.md) — and the text colour that reads on it (>= 4.5:1) */
+  --c-sun: #ffe7a3;
+  --c-on-sun: #7a4700;
+  --c-rose: #ffd2c9;
+  --c-on-rose: #8f1d16;
+  --c-mint: #cbebd5;
+  --c-on-mint: #14573a;
+  --c-mint-strong: #9fd8b1;
+  --c-on-mint-strong: #0f4a30;
+  --c-sky: #cde2f4;
+  --c-on-sky: #1d4f80;
+  --c-lilac: #e2d8f5;
+  --c-on-lilac: #4a2f8a;
+  /* status (text-safe on light) */
+  --c-success: #1f7a4d;
+  --c-success-soft: var(--c-mint);
+  --c-warn: #965600;
+  --c-warn-soft: var(--c-sun);
+  --c-danger: #b3261e;
+  --c-danger-hover: #8f1d16;
+  --c-danger-soft: var(--c-rose);
+  --c-info: #2a64a0;
+  --c-violet: #5b3fb0;
+  --c-violet-soft: var(--c-lilac);
+  --c-overlay: rgba(43, 33, 24, 0.5);
+  --c-code-bg: #2b2118;
+  --c-code-ink: #f3ebdd;
+  --shadow-sm: none;
+  --shadow-md: 0 1px 2px rgba(91, 63, 26, 0.08), 0 8px 24px -16px rgba(91, 63, 26, 0.18);
+  --shadow-lg: 0 18px 50px -20px rgba(91, 63, 26, 0.4);
+  --shadow-press: 0 3px 0 var(--c-accent-press);
+  --shadow-press-down: 0 2px 0 var(--c-accent-press);
+}
+
+/* ---- color: dark (same token set; values from the brain dashboard's dark.css) ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --c-bg: #16130e;
+    --c-bg-dot: #3a3326;
+    --c-surface: #241f17;
+    --c-surface-2: #2b251b;
+    --c-surface-3: #1e1a13;
+    --c-nav: #2c2519;
+    --c-ink: #f3ebdd;
+    --c-ink-2: #d2c6b2;
+    --c-ink-3: #a89b85;
+    --c-line: #3a3326;
+    --c-line-strong: #4b422f;
+    --c-accent: #c73e1d;
+    --c-accent-hover: #b3361a;
+    --c-accent-ink: #ffffff;
+    --c-accent-text: #ff9477;
+    --c-accent-press: #5e1c0b;
+    --c-accent-soft: rgba(232, 100, 63, 0.15);
+    --c-accent-line: rgba(232, 100, 63, 0.45);
+    --c-ink-bg: #5b503d;
+    --c-on-ink-bg: #ffffff;
+    --c-sun: #4b3d14;
+    --c-on-sun: #f0b955;
+    --c-rose: #4c2822;
+    --c-on-rose: #ff9a90;
+    --c-mint: #1f3e2b;
+    --c-on-mint: #7fdba8;
+    --c-mint-strong: #2a5a3c;
+    --c-on-mint-strong: #a6ebc3;
+    --c-sky: #1f3650;
+    --c-on-sky: #9cc8f5;
+    --c-lilac: #352c50;
+    --c-on-lilac: #c9b6f5;
+    --c-success: #5cc98f;
+    --c-warn: #e3a540;
+    --c-danger: #ff7b70;
+    --c-danger-hover: #ff9a90;
+    --c-info: #70aeeb;
+    --c-violet: #c9b6f5;
+    --c-overlay: rgba(0, 0, 0, 0.62);
+    --c-code-bg: #0e0c08;
+    --c-code-ink: #f3ebdd;
+    --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -16px rgba(0, 0, 0, 0.65);
+    --shadow-lg: 0 18px 50px -20px rgba(0, 0, 0, 0.8);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #16130e;
+  --c-bg-dot: #3a3326;
+  --c-surface: #241f17;
+  --c-surface-2: #2b251b;
+  --c-surface-3: #1e1a13;
+  --c-nav: #2c2519;
+  --c-ink: #f3ebdd;
+  --c-ink-2: #d2c6b2;
+  --c-ink-3: #a89b85;
+  --c-line: #3a3326;
+  --c-line-strong: #4b422f;
+  --c-accent: #c73e1d;
+  --c-accent-hover: #b3361a;
+  --c-accent-ink: #ffffff;
+  --c-accent-text: #ff9477;
+  --c-accent-press: #5e1c0b;
+  --c-accent-soft: rgba(232, 100, 63, 0.15);
+  --c-accent-line: rgba(232, 100, 63, 0.45);
+  --c-ink-bg: #5b503d;
+  --c-on-ink-bg: #ffffff;
+  --c-sun: #4b3d14;
+  --c-on-sun: #f0b955;
+  --c-rose: #4c2822;
+  --c-on-rose: #ff9a90;
+  --c-mint: #1f3e2b;
+  --c-on-mint: #7fdba8;
+  --c-mint-strong: #2a5a3c;
+  --c-on-mint-strong: #a6ebc3;
+  --c-sky: #1f3650;
+  --c-on-sky: #9cc8f5;
+  --c-lilac: #352c50;
+  --c-on-lilac: #c9b6f5;
+  --c-success: #5cc98f;
+  --c-warn: #e3a540;
+  --c-danger: #ff7b70;
+  --c-danger-hover: #ff9a90;
+  --c-info: #70aeeb;
+  --c-violet: #c9b6f5;
+  --c-overlay: rgba(0, 0, 0, 0.62);
+  --c-code-bg: #0e0c08;
+  --c-code-ink: #f3ebdd;
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -16px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 18px 50px -20px rgba(0, 0, 0, 0.8);
+}

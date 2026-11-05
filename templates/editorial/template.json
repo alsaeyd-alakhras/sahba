@@ -1,0 +1,25 @@
+{
+  "id": "editorial",
+  "name": { "ar": "تحريري", "en": "Editorial" },
+  "desc": {
+    "ar": "خلفية سكرية منقّطة، أزرق واضح، خط Cairo عريض، دائرة مرسومة باليد، وصورتك بالغلاف والختام.",
+    "en": "Cream dotted paper, a clear blue accent, bold Cairo type, a hand-drawn circle, and your photo on the cover and closing slide."
+  },
+  "fits": {
+    "ar": "تعليمي، قوائم ونصائح، أي موضوع",
+    "en": "Educational posts, listicles and tips — any topic"
+  },
+  "tokens": {
+    "bg": "#F4F1EA",
+    "ink": "#161b29",
+    "soft": "#39414f",
+    "mute": "#5a6478",
+    "accent": "#2f6bed",
+    "accentDark": "#1d4ed8",
+    "accentLight": "#5b8def",
+    "onAccent": "#ffffff",
+    "card": "#ffffff",
+    "cardBar": "#f3f5fa",
+    "font": "cairo"
+  }
+}

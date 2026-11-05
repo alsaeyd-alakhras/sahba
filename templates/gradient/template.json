@@ -1,0 +1,26 @@
+{
+  "id": "gradient",
+  "name": { "ar": "تدرّج", "en": "Gradient" },
+  "desc": {
+    "ar": "تدرّج غامق من البنفسجي للأزرق، كروت زجاجية، لافندر متوهّج، وأرقام ضخمة على سلايدات الأرقام والمقارنات.",
+    "en": "A dark violet-to-blue gradient, glassy cards, a glowing lavender accent and oversized numbers on stat and bar slides."
+  },
+  "fits": {
+    "ar": "أرقام وإحصائيات، حقائق، قبل وبعد",
+    "en": "Numbers and stats, facts, before/after"
+  },
+  "tokens": {
+    "bg": "#24206e",
+    "ink": "#ffffff",
+    "soft": "#e6e2ff",
+    "mute": "#bdb6ec",
+    "accent": "#c4b5fd",
+    "accentDark": "#a78bfa",
+    "accentLight": "#e0d7ff",
+    "card": "rgba(255, 255, 255, .1)",
+    "cardBar": "rgba(255, 255, 255, .07)",
+    "term": "#140d3a",
+    "termBar": "#1e1650",
+    "font": "tajawal"
+  }
+}

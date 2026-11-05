@@ -1,0 +1,135 @@
+/* Gradient — dark violet→blue gradient, faint white grid, frosted-glass cards, glowing lavender accent, oversized numbers.
+   --accent-text = accent lifted to a readable lightness on the dark gradient; --on-accent = dark ink on light accents,
+   white on dark ones (both follow identity.accent). The background gradient is fixed — it is the template's signature. */
+:root {
+  --accent-text: oklch(from var(--accent) max(l, .84) c h);
+  --on-accent: oklch(from var(--accent) clamp(.2, (.7 - l) * 1000, .99) clamp(0, (l - .7) * 1000, .09) 290);
+  --sky: linear-gradient(135deg, #2d1b69 0%, #1f2a86 52%, #0d47a1 100%);
+  --grad: linear-gradient(120deg, var(--accent), color-mix(in srgb, var(--accent) 78%, #fff));
+  --glass: rgba(255, 255, 255, .1);
+  --glass-edge: rgba(255, 255, 255, .22);
+  --hair: var(--glass-edge);
+  --track: rgba(255, 255, 255, .13);
+  --dots: transparent;
+  --glow1: rgba(139, 92, 246, .38);
+  --glow2: rgba(59, 130, 246, .34);
+  --shadow: 0 24px 60px rgba(8, 4, 40, .35);
+  --shadow-accent: color-mix(in srgb, var(--accent) 45%, transparent);
+  --tile-radius: .3;
+  --w-title: 900;
+  --w-body: 500;
+}
+html, body, .slide { background: var(--sky); }
+
+/* ── background: soft white grid + two big colour orbs ── */
+.bg-dots { background-image:
+    linear-gradient(rgba(255, 255, 255, .045) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(255, 255, 255, .045) 1.5px, transparent 1.5px);
+  background-size: 72px 72px; background-position: -1px -1px; }
+.bg-glow.g1 { width: 900px; height: 900px; top: -300px; inset-inline-end: -300px; }
+.bg-glow.g2 { width: 820px; height: 820px; bottom: -330px; inset-inline-start: -260px; }
+
+/* ── chrome ── */
+.spark path, .bookmark path { fill: #fff; }
+.sparkle path { fill: var(--accent-light); }
+.corner-spark { filter: drop-shadow(0 0 14px color-mix(in srgb, var(--accent) 80%, transparent)); }
+.badge span { color: #fff; background: rgba(255, 255, 255, .12); border: 1.5px solid rgba(255, 255, 255, .26); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.progress { background: rgba(255, 255, 255, .12); height: 8px; }
+.progress-fill { height: 8px; background: linear-gradient(90deg, var(--accent), var(--accent-light), #fff); box-shadow: 0 0 16px var(--accent); }
+.pn-n { color: #fff; }
+.pn-t { color: rgba(255, 255, 255, .5); }
+.handle { color: rgba(255, 255, 255, .58); }
+
+/* ── markup ── */
+.rb, .rl { color: var(--accent-text); }
+.rb { text-shadow: 0 0 40px color-mix(in srgb, var(--accent) 55%, transparent); }
+.rm { background: linear-gradient(transparent 56%, color-mix(in srgb, var(--accent) 42%, transparent) 56%, color-mix(in srgb, var(--accent) 42%, transparent) 94%, transparent 94%); }
+.rc-svg path { stroke: var(--accent-text); stroke-width: 6; filter: drop-shadow(0 0 10px color-mix(in srgb, var(--accent) 80%, transparent)); }
+
+/* ── primitives: glowing accent tiles, frosted glass cards ── */
+.tile { box-shadow: 0 0 calc(var(--s) * .4) color-mix(in srgb, var(--accent) 55%, transparent), inset 0 2px 0 rgba(255, 255, 255, .45); }
+.tile.light, .chip, .win, .cmp-card, .as-card, .pill, .ao-label span {
+  background: var(--glass); border: 1.5px solid var(--glass-edge); box-shadow: var(--shadow), inset 0 1.5px 0 rgba(255, 255, 255, .18);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.tile.light { color: #fff; }
+.tile.bare { background: transparent; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.win-bar { border-bottom: 1.5px solid rgba(255, 255, 255, .12); }
+.skel-row { background: rgba(255, 255, 255, .16); }
+.skel-row.hot { box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 70%, transparent); }
+.hand-arrow path, .swipe-arrow path { stroke: var(--accent-text); }
+.photo { border-color: #fff; background: rgba(255, 255, 255, .15); box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 55%, transparent); }
+.photo-empty { background: color-mix(in srgb, var(--accent) 30%, #2a2070); }
+.photo-empty svg * { fill: color-mix(in srgb, var(--accent) 70%, #2a2070); }
+
+/* art */
+.ao-dash { stroke: #fff; stroke-opacity: .45; }
+.ao-fill { fill: rgba(255, 255, 255, .07); }
+.ao-label span { color: #fff; }
+.as-t { color: #fff; }
+.as-bar { background: rgba(255, 255, 255, .2); }
+.as-card.hot { background: var(--grad); border: 0; box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 55%, transparent), 0 26px 50px rgba(8, 4, 40, .4); }
+.as-card.hot .tile.light { background: rgba(255, 255, 255, .55); color: var(--on-accent); border-color: rgba(255, 255, 255, .6); }
+
+/* ── shared ── */
+.kicker, .point-head, .swipe-t, .cover-handle, .cta-handle, .src-t, .rule-k, .li-dot { color: var(--accent-text); }
+.accent-line, .src-line { height: 8px; border-radius: 4px; box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 80%, transparent); }
+.steps-line { background: linear-gradient(180deg, var(--accent-light), color-mix(in srgb, var(--accent) 30%, transparent)); box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 60%, transparent); }
+
+/* point: huge soft number */
+.ghost-num { color: rgba(255, 255, 255, .09); font-size: 560px; top: 90px; }
+.num-tile { box-shadow: 0 0 50px color-mix(in srgb, var(--accent) 55%, transparent), inset 0 2px 0 rgba(255, 255, 255, .45); }
+
+/* quote */
+.quote-mark { color: rgba(255, 255, 255, .13); font-size: 460px; top: 110px; }
+
+/* stat: the number is the slide */
+.k-stat .stat-val { font-size: calc(var(--fs, 340px) * 1.12); letter-spacing: -10px;
+  background: linear-gradient(180deg, #fff 18%, var(--accent-light) 55%, var(--accent) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 40px color-mix(in srgb, var(--accent) 50%, transparent)); padding-inline-end: 8px; }
+.k-stat .stat-unit { font-size: 140px; color: var(--accent-text); }
+.meter { height: 18px; border-radius: 9px; background: rgba(255, 255, 255, .12); }
+.meter-fill { border-radius: 9px; background: linear-gradient(90deg, var(--accent), var(--accent-light), #fff); box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 80%, transparent); }
+
+/* bars: big glowing values */
+.bars { gap: 34px; }
+.bar-head { align-items: baseline; color: var(--soft); margin-bottom: 8px; }
+.bar-v { font-size: 72px; line-height: 1; color: #fff; }
+.bar.hot .bar-head { color: var(--accent-text); }
+.bar.hot .bar-v { color: var(--accent-text); text-shadow: 0 0 30px color-mix(in srgb, var(--accent) 70%, transparent); font-size: 96px; }
+.bar-track { height: 34px; border-radius: 17px; background: rgba(255, 255, 255, .1); }
+.bar-fill { border-radius: 17px; background: rgba(255, 255, 255, .32); }
+.bar.hot .bar-fill { background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 70%, #5b21b6), var(--accent), var(--accent-light)); box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 80%, transparent); }
+
+/* compare */
+.cmp-h { color: var(--mute); }
+.cmp-card.hot { background: var(--grad); color: var(--on-accent); border: 0; box-shadow: 0 0 70px color-mix(in srgb, var(--accent) 50%, transparent), 0 24px 50px rgba(8, 4, 40, .4);
+  -webkit-backdrop-filter: none; backdrop-filter: none; }
+.vs { background: #fff; color: #2d1b69; box-shadow: 0 0 40px rgba(255, 255, 255, .35); }
+
+/* sites */
+.win.brand { border: 2px solid var(--accent-text); box-shadow: 0 0 80px color-mix(in srgb, var(--accent) 45%, transparent); }
+.site-nav i, .site-hero, .site-ph { background: rgba(255, 255, 255, .14); }
+.site-row.b { color: var(--accent-text); }
+.site-swatches i { border-color: rgba(255, 255, 255, .7); box-shadow: 0 4px 12px rgba(8, 4, 40, .4); }
+.site-tag span { background: rgba(255, 255, 255, .12); color: var(--soft); }
+.site-tag.hot span { background: var(--grad); color: var(--on-accent); box-shadow: 0 0 34px color-mix(in srgb, var(--accent) 60%, transparent); }
+
+/* pick */
+.pill { color: #fff; opacity: .5; text-decoration-color: rgba(255, 255, 255, .6); }
+.pick-hot { box-shadow: 0 0 90px color-mix(in srgb, var(--accent) 65%, transparent), inset 0 2px 0 rgba(255, 255, 255, .5); }
+
+/* rule */
+.flow-t { color: var(--mute); }
+.flow-step.hot .flow-t { color: var(--accent-text); }
+.flow-arrow path { stroke: var(--accent-text); }
+
+/* steps */
+.step-dot { background: var(--grad); border: 0; color: var(--on-accent); box-shadow: 0 0 0 8px rgba(255, 255, 255, .1), 0 0 36px color-mix(in srgb, var(--accent) 60%, transparent); }
+.step-dot .tile.bare { color: var(--on-accent); }
+
+/* code */
+.term { border: 1.5px solid rgba(255, 255, 255, .16); box-shadow: 0 30px 70px rgba(8, 4, 40, .5), 0 0 60px color-mix(in srgb, var(--accent) 22%, transparent); }
+.cursor { background: var(--accent-light); }
+
+/* cta */
+.cta-ring { border-color: #fff; opacity: .28; }

@@ -1,0 +1,28 @@
+{
+ "slug": "bad_order",
+ "caption": "كابشن\n\n#a #b #c #d #e",
+ "slides": [
+  {
+   "kind": "point",
+   "icon": "Rocket",
+   "title": "مش غلاف"
+  },
+  {
+   "kind": "cover",
+   "headline": "غلاف بالنص",
+   "icons": [
+    "Rocket",
+    "Clock",
+    "Zap"
+   ]
+  },
+  {
+   "kind": "cta",
+   "headline": "بالنص"
+  },
+  {
+   "kind": "quote",
+   "quote": "آخر سلايد مش cta"
+  }
+ ]
+}

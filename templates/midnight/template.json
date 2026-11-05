@@ -1,0 +1,26 @@
+{
+  "id": "midnight",
+  "name": { "ar": "منتصف الليل", "en": "Midnight" },
+  "desc": {
+    "ar": "خلفية شبه سوداء بشبكة خفيفة، كروت ولوحات مرفوعة بحدود حادة، وأزرق فاتح متوهّج — شكل تقني نظيف.",
+    "en": "Near-black background with a faint grid, elevated cards and panels with crisp borders, and a glowing light-blue accent — a clean tech look."
+  },
+  "fits": {
+    "ar": "مقارنات، أدوات وبرامج، محتوى تقني",
+    "en": "Comparisons, tools and apps, tech content"
+  },
+  "tokens": {
+    "bg": "#060612",
+    "ink": "#f3f6ff",
+    "soft": "#c4cce0",
+    "mute": "#8d97b5",
+    "accent": "#7eb3ff",
+    "accentDark": "#5b9bff",
+    "accentLight": "#b9d5ff",
+    "card": "#0e1226",
+    "cardBar": "#141a33",
+    "term": "#03040b",
+    "termBar": "#0b0f22",
+    "font": "ibm-plex-arabic"
+  }
+}

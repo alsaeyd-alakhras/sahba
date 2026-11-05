@@ -1,0 +1,12 @@
+/* Editorial — cream dotted paper + blue accent + Cairo + hand-drawn circle.
+   The engine base CSS already draws this look; this file only pins the decorative choices
+   so other templates can see what to override (see engine/CLASSES.md). */
+:root {
+  --dots: rgba(20, 30, 55, 0.05);
+  --glow1: color-mix(in srgb, var(--accent) 12%, transparent);
+  --glow2: color-mix(in srgb, var(--accent-light) 10%, transparent);
+  --tile-radius: .28;
+  --w-title: 900;
+}
+/* hand-drawn circle stays a single blue stroke */
+.rc-svg path { stroke: var(--accent); stroke-width: 5; }

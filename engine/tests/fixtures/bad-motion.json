@@ -1,0 +1,34 @@
+{
+ "slug": "bad_motion",
+ "caption": "كابشن\n\n#a #b #c #d #e",
+ "mode": "motion",
+ "slides": [
+  {
+   "kind": "cover",
+   "mode": "motion",
+   "dur": 6,
+   "headline": "غلاف متحرك",
+   "icons": [
+    "Rocket",
+    "Clock",
+    "Zap"
+   ]
+  },
+  {
+   "kind": "code",
+   "icon": "Terminal",
+   "title": "أمر",
+   "speed": 2,
+   "lines": [
+    {
+     "t": "ls",
+     "k": "cmd"
+    }
+   ]
+  },
+  {
+   "kind": "cta",
+   "headline": "تابع"
+  }
+ ]
+}
